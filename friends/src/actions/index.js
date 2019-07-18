@@ -15,3 +15,12 @@ export const login = creds => dispatch => {
         })
         .catch(err => console.log(err.response))
 }
+
+export const FETCH_START  = 'FETCH_START';
+export const FETCH_SUCCESS  = 'FETCH_SUCCESS';
+export const FETCH_FAILURE  = 'FETCH_FAILURE';
+export const getData = () => dispatch => {
+    dispatch({ type: FETCH_START });
+    axios
+        .get
+}
