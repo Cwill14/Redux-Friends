@@ -28,8 +28,10 @@ const Login = ({ touched, errors }) => {
 export default withFormik({
     mapPropsToValues(username, password) {
         return {
-            username: "",
-            password: ""
+            // username: username || "",
+            username: "Lambda School",
+            // password: password || ""
+            password: "i<3Lambd4"
         }
     },
     validationSchema: Yup.object().shape({
@@ -40,7 +42,7 @@ export default withFormik({
             .min(6)
             .required()
     }),
-    handleSubmit(values, formikBag) {
+    handleSubmit(values, formikBag, ...props) {
         const url = "http://localhost:5000/api/login";
         // setIsLoading(true);
         axiosWithAuth()
@@ -48,6 +50,7 @@ export default withFormik({
             .then(res => {
                 console.log(res)
                 localStorage.setItem('token', res.data.payload)
+                formikBag.props.history.push("/list")
             })
             .catch(err => {
                 console.log(err);

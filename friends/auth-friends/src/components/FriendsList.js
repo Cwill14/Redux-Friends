@@ -1,8 +1,12 @@
 import React from 'react';
 
-const FriendsList = () => {
+const FriendsList = props => {
     return (
         <div>
+            <button onClick={() => {
+                localStorage.removeItem('token');
+                props.props.history.push("/");
+            }}>Log Out</button>
             FriendsList
         </div>
     );
