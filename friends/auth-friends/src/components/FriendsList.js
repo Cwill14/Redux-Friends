@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { axiosWithAuth } from '../axiosAuth';
 import Friend from './Friend';
+import AddFriend from './AddFriend';
 
 const FriendsList = props => {
     
@@ -22,12 +23,12 @@ const FriendsList = props => {
         <div>
             <button onClick={() => {
                 localStorage.removeItem('token');
-                props.props.history.push("/");
+                props.history.push("/");
             }}>Log Out</button>
             {list.map(eachFriend => {
                 return <Friend friend={eachFriend} key={eachFriend.id} />
             })}
-            FriendsList
+            <AddFriend />
         </div>
     );
 };
