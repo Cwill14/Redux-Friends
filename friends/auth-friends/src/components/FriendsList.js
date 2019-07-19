@@ -24,13 +24,15 @@ const FriendsList = props => {
                 localStorage.removeItem('token');
                 props.history.push("/");
             }}>Log Out</button>
-            { list 
-                ? (list.map(eachFriend => {
-                    return <Friend friend={eachFriend} key={eachFriend.id} />
-                }))
-                : <p>loading...</p>
-                
-            }
+            <div className="listBox">
+                { list 
+                    ? (list.map(eachFriend => {
+                        return <Friend friend={eachFriend} key={eachFriend.id} />
+                    }))
+                    : <p>loading...</p>
+                    
+                }
+            </div>
             <AddFriend setList={setList} />
         </div>
     );

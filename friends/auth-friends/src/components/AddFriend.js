@@ -6,12 +6,18 @@ import { axiosWithAuth } from '../axiosAuth';
 const AddFriend = (values, props) => {
     return (
         <Form>
-            <label>Name: </label>
-            <Field name="name" />
-            <label>Age: </label>
-            <Field type="number" name="age" />
-            <label>Email: </label>
-            <Field type="email" name="email" />
+            <div className="add-form-group">
+                <label>Name: </label>
+                <Field name="name" />
+            </div>
+            <div className="add-form-group">
+                <label>Age: </label>
+                <Field type="number" name="age" />
+            </div>
+            <div className="add-form-group">
+                <label>Email: </label>
+                <Field type="email" name="email" />
+            </div>
             <button type="submit">Add New Friend</button>
         </Form>
     );

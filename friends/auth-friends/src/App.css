@@ -1,3 +1,10 @@
 .App {
   text-align: center;
 }
+.friendBox {
+  /* border: 1px solid white; */
+}
+.list-box {
+  border: 1px dashed red;
+  display: flex;
+}
